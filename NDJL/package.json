@@ -1,0 +1,16 @@
+{
+  "name": "ndjl",
+  "version": "1.0.0",
+  "description": "NDJL (Natural Developer Journey Language) interpreter",
+  "main": "index.js",
+  "bin": {
+    "ndjl": "./bin/ndjl.js"
+  },
+  "pkg": {
+    "assets": [],
+    "targets": ["node18-win-x64"],
+    "outputPath": "../installer/dist"
+  },
+  "keywords": ["ndjl", "language", "interpreter"],
+  "license": "MIT"
+}

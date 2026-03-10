@@ -1,0 +1,79 @@
+{
+  "name": "ndjl-language",
+  "displayName": "NDJL Language Support",
+  "description": "Full language support for NDJL (Natural Developer Journey Language) — syntax highlighting, autocomplete, snippets, and run command.",
+  "version": "1.0.0",
+  "publisher": "ndjl",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "activationEvents": [
+    "onLanguage:ndjl",
+    "onCommand:ndjl.runFile"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "ndjl",
+        "aliases": [
+          "NDJL",
+          "ndjl"
+        ],
+        "extensions": [
+          ".ndjl"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "ndjl",
+        "scopeName": "source.ndjl",
+        "path": "./syntaxes/ndjl.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "ndjl",
+        "path": "./snippets/ndjl.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "ndjl.runFile",
+        "title": "Run NDJL File",
+        "category": "NDJL"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "resourceLangId == ndjl",
+          "command": "ndjl.runFile",
+          "group": "navigation"
+        }
+      ],
+      "editor/title/run": [
+        {
+          "when": "resourceLangId == ndjl",
+          "command": "ndjl.runFile"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "NDJL",
+      "properties": {
+        "ndjl.interpreterPath": {
+          "type": "string",
+          "default": "",
+          "description": "Absolute path to the NDJL index.js interpreter. Leave empty to auto-detect from workspace or use global CLI."
+        }
+      }
+    }
+  }
+}

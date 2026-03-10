@@ -1,0 +1,76 @@
+{
+  "If Block": {
+    "prefix": "if",
+    "body": [
+      "if ${1:condition}",
+      "\t${2:# body}",
+      "end"
+    ],
+    "description": "If conditional block"
+  },
+  "If Else Block": {
+    "prefix": "ifelse",
+    "body": [
+      "if ${1:condition}",
+      "\t${2:# true branch}",
+      "else",
+      "\t${3:# false branch}",
+      "end"
+    ],
+    "description": "If-else conditional block"
+  },
+  "Repeat Loop": {
+    "prefix": "repeat",
+    "body": [
+      "repeat ${1:5} times",
+      "\t${2:# loop body}",
+      "end"
+    ],
+    "description": "Repeat loop block"
+  },
+  "Function Definition": {
+    "prefix": "define",
+    "body": [
+      "define ${1:functionName}",
+      "\t${2:# function body}",
+      "\treturn ${3:result}",
+      "end"
+    ],
+    "description": "Define a function"
+  },
+  "Create Number": {
+    "prefix": "crnum",
+    "body": [
+      "create number ${1:name} = ${2:0}"
+    ],
+    "description": "Create a number variable"
+  },
+  "Create Text": {
+    "prefix": "crtxt",
+    "body": [
+      "create text ${1:name} = \"${2:value}\""
+    ],
+    "description": "Create a text variable"
+  },
+  "Create List": {
+    "prefix": "crlist",
+    "body": [
+      "create list ${1:name} = [${2:items}]"
+    ],
+    "description": "Create a list variable"
+  },
+  "Say": {
+    "prefix": "say",
+    "body": [
+      "say ${1:\"message\"}"
+    ],
+    "description": "Print output"
+  },
+  "Ask Input": {
+    "prefix": "ask",
+    "body": [
+      "ask \"${1:prompt}\" into ${2:variable}"
+    ],
+    "description": "Get user input"
+  }
+}

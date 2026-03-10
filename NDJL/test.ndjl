@@ -1,0 +1,78 @@
+create int x = 5
+create int y = 3
+create int sum = x + y
+say sum
+
+
+say "hello"
+
+# create str name = "Naveen"
+# say name
+
+# create int result = x * y
+# say result
+
+# create int diff = x - y
+# say diff
+
+# create int remainder = x % y
+# say remainder
+
+# create number score = 85
+
+if score greater than 80
+  say "Great score"
+else
+  say "Keep trying"
+end
+
+# create int low = 2
+
+# if low less than 5
+#   say "low is small"
+# else
+#   say "low is big"
+# end
+
+# create int n = 10
+
+# if n equals 10
+#   say "n is ten"
+# else
+#   say "n is not ten"
+# end
+
+# define greet(name)
+#   say "Hello " + name
+# end
+
+# greet("Naveen")
+
+# define add(a, b)
+#   return a + b
+# end
+
+# create number addResult = add(5, 3)
+# say addResult
+
+# create int counter = 0
+
+# repeat 5 times
+#   say counter
+#   counter = counter + 1
+# end
+
+# create int a = 1
+# create int b = 0
+
+# if a equals 1 and b equals 0
+#   say "and works"
+# end
+
+# if a equals 1 or b equals 1
+#   say "or works"
+# end
+
+# if not b equals 1
+#   say "not works"
+# end

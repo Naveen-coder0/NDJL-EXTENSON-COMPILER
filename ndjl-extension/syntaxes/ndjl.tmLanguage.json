@@ -1,0 +1,105 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "NDJL",
+  "scopeName": "source.ndjl",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#keywords" },
+    { "include": "#operators" },
+    { "include": "#arrays" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.number-sign.ndjl",
+          "match": "#.*$"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.ndjl",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.ndjl",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.ndjl",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            {
+              "name": "constant.character.escape.ndjl",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.ndjl",
+          "match": "\\b[0-9]+(\\.[0-9]+)?\\b"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.ndjl",
+          "match": "\\b(if|else|end|repeat|times|define|return)\\b"
+        },
+        {
+          "name": "keyword.other.ndjl",
+          "match": "\\b(create|number|text|list|say|ask|into)\\b"
+        },
+        {
+          "name": "keyword.operator.logical.ndjl",
+          "match": "\\b(and|or|not)\\b"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.word.ndjl",
+          "match": "\\b(plus|minus|equals)\\b"
+        },
+        {
+          "name": "keyword.operator.comparison.ndjl",
+          "match": "\\b(greater\\s+than|less\\s+than)\\b"
+        }
+      ]
+    },
+    "arrays": {
+      "patterns": [
+        {
+          "name": "meta.array.ndjl",
+          "begin": "\\[",
+          "beginCaptures": {
+            "0": { "name": "punctuation.definition.array.begin.ndjl" }
+          },
+          "end": "\\]",
+          "endCaptures": {
+            "0": { "name": "punctuation.definition.array.end.ndjl" }
+          },
+          "patterns": [
+            { "include": "#strings" },
+            { "include": "#numbers" },
+            { "include": "#comments" }
+          ]
+        }
+      ]
+    }
+  }
+}
